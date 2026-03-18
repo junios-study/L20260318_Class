@@ -3,6 +3,8 @@
 #include "State.h"
 #include "Transition.h"
 
+#include <iostream>
+
 UFSM::UFSM()
 {
 	States = new UState[4];
@@ -45,4 +47,35 @@ UFSM::~UFSM()
 	States = nullptr;
 	delete[] Transitions;
 	Transitions = nullptr;
+}
+
+void UFSM::Process(int CurrentState, std::string CurrentCondition)
+{
+	for (int i = 0; i < 5; ++i)
+	{
+		if (Transitions[i].CurrentState == CurrentState &&
+			Transitions[i].Condition == CurrentCondition)
+		{
+			std::cout << GetStateName(Transitions[i].NextState) << std::endl;
+
+			return;
+		}
+	}
+
+	std::cout << GetStateName(CurrentState) << std::endl;
+
+
+}
+
+std::string UFSM::GetStateName(int InId)
+{
+	for (int i = 0; i < 4; ++i)
+	{
+		if (States[i].ID == InId)
+		{
+			return States[i].StateName;
+		}
+	}
+
+	return "상태없음";
 }

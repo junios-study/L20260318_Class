@@ -7,6 +7,8 @@ int main()
 {
 	UFSM MonsterFSM;
 
+	MonsterFSM.Process(2, "Àû³õÄ§");
+
 
 	return 0;
 }
