@@ -1,14 +1,13 @@
 #pragma once
-class AMonster
+class AActor
 {
 public:
-	AMonster();
-	~AMonster();
+	AActor();
+	~AActor();
 
 	int X;
 	int Y;
 	int Mesh;
 
-	void Move();
 };
 

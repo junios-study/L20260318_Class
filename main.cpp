@@ -1,13 +1,15 @@
 #include <iostream>
-#include "FSM.h"
+#include "Player.h"
+#include "Floor.h"
+#include "Wall.h"
 
 using namespace std;
 
 int main()
 {
-	UFSM MonsterFSM;
+	APlayer* MyPlayer = new APlayer();
 
-	MonsterFSM.Process(2, "Àû³õÄ§");
+	delete MyPlayer;
 
 
 	return 0;
